@@ -42,4 +42,13 @@ describe('UnityDownloadClient', () => {
                 done()
             }, done)
     }).timeout(5000)
+
+    it('should do lookups', (done) => {
+        new UnitySearchClient()
+            .lookup(32351)
+            .then((data) => {
+                assert.ok(data.id != null)
+                done()
+            }, done)
+    }).timeout(5000)
 })
